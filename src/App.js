@@ -5,15 +5,18 @@ import { ThemeProvider } from 'styled-components'
 import theme from './theme'
 import client from './client'
 import Home from './containers/Home'
+import Login from './containers/Home/Login'
 
 const App = () => (
   <Router>
     <ThemeProvider theme={theme}>
       <ApolloProvider client={client}>
         <div className="App">
-          <Switch>
-            <Route path="/" component={Home} />
+        <Switch>
+            <Route path = "/login" component = {Login}/>
+            <Route unique path="/" component={Home} />
           </Switch>
+          
         </div>
       </ApolloProvider>
     </ThemeProvider>
